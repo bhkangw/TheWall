@@ -4,18 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using TheWall.Factory;
 
 namespace TheWall.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly DbConnector _dbConnector;
-
-        public HomeController(DbConnector connect)
+        private readonly UserFactory userFactory;
+        public HomeController(UserFactory connect)
         {
-            _dbConnector = connect;
+            userFactory = connect;
         }
-        
+
         [HttpGet]
         [Route("")]
         public IActionResult Index()

@@ -31,7 +31,7 @@ namespace TheWall
             services.AddMvc();
             services.AddSession();
             services.Configure<MySqlOptions>(Configuration.GetSection("DBInfo"));
-            services.AddScoped<DbConnector>();
+            services.AddScoped<UserFactory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
